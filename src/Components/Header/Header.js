@@ -24,7 +24,7 @@ export default function Header() {
                   </div>
                   <span className="search">
                      <BiSearchAlt className="search-icon"></BiSearchAlt>
-                     <input type="text" className="search-input" placeholder="search..." />
+                     <input type="text" className="search-input" placeholder="Search..." />
                   </span>
                   <ul className="header-menu">
                      <Link to="/" className="header-menu__item">

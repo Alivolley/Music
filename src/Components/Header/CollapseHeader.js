@@ -9,7 +9,7 @@ export default function CollapseHeader(props) {
          <div className="container">
             <IoMdCloseCircleOutline className="collapse-header__close-btn" onClick={props.unshow()}></IoMdCloseCircleOutline>
             <div className="collapse-wrapper">
-               <img src="/pics/favicon.png" alt="" className="collapse-header__icon" />
+               <img src="/pics/logo.png" alt="" className="collapse-header__icon" />
                <Link to="/" className="collapse-header__item active">
                   Home
                </Link>

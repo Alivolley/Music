@@ -1,5 +1,5 @@
 .header {
-   background-color: var(--secondary);
+   background: linear-gradient(180deg, rgba(34, 34, 34, 1) 0%, rgba(34, 34, 34, 0.247) 100%);
    padding-top: 1.5rem;
    padding-bottom: 1rem;
 }
@@ -12,6 +12,11 @@
    text-decoration: none;
    color: var(--white);
    margin: 0 1rem;
+   transition: all 0.1s;
+}
+
+.header-menu__item:hover {
+   color: var(--main-yellow);
 }
 
 .header-menu__Download {
@@ -48,6 +53,12 @@
    background-color: #0d0d0daf;
    height: 4rem;
    padding-left: 0.3rem;
+   cursor: pointer;
+   transition: all 0.1s;
+}
+
+.search-icon:hover {
+   background-color: var(--gray);
 }
 
 .search-input {
