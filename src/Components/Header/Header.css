@@ -1,0 +1,68 @@
+.header {
+   background-color: var(--secondary);
+   padding-top: 1.5rem;
+   padding-bottom: 1rem;
+}
+
+.header-menu {
+   display: none;
+}
+
+.header-menu__item {
+   text-decoration: none;
+   color: var(--white);
+   margin: 0 1rem;
+}
+
+.header-menu__Download {
+   background-color: var(--gray);
+   padding: 0.5rem 1rem;
+}
+
+.header-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.header-logo {
+   width: 5rem;
+   height: 5rem;
+}
+
+.logo-title {
+   font-family: "mont2";
+   display: none;
+}
+
+.search {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 0.5rem;
+   overflow: hidden;
+}
+
+.search-icon {
+   font-size: 2.5rem;
+   background-color: #0d0d0daf;
+   height: 4rem;
+   padding-left: 0.3rem;
+}
+
+.search-input {
+   width: 12rem;
+   border: none;
+   background-color: #0d0d0daf;
+   height: 4rem;
+   padding-left: 1rem;
+   color: var(--white);
+}
+.search-input:focus {
+   outline: none;
+   border: 0.2rem solid var(--gray);
+}
+
+.uncollapser {
+   font-size: 3.5rem;
+}

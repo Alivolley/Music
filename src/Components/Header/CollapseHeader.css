@@ -1,0 +1,66 @@
+.collapse-header {
+   position: fixed;
+   top: 0;
+   left: 100%;
+   bottom: 0;
+   right: 0;
+   background-color: var(--secondary);
+   transition: all 0.3s;
+}
+
+.collapse-header--show {
+   left: 0;
+}
+
+.collapse-header__close-btn {
+   color: var(--main-yellow);
+   font-size: 3.5rem;
+   margin-top: 2rem;
+}
+
+.collapse-wrapper {
+   padding-top: 1rem;
+}
+
+.collapse-header__icon {
+   display: block;
+   width: 10rem;
+   margin: 0 auto 4rem auto;
+}
+
+.collapse-header__item {
+   margin: 1rem 3rem;
+   font-size: 2rem;
+   display: block;
+   text-decoration: none;
+   color: var(--white);
+   padding-right: 2rem;
+   padding-bottom: 1rem;
+   transition: all 0.2s;
+}
+
+.collapse-wrapper .active {
+   margin-left: 6rem;
+   position: relative;
+   border-left: 0.4rem solid var(--main-yellow);
+   padding-left: 1.5rem;
+   /* border-bottom: 0.2rem solid var(--main-yellow); */
+   border-bottom-left-radius: 3rem;
+}
+
+.collapse-wrapper .active::before {
+   content: "";
+   position: absolute;
+   background-color: var(--main-yellow);
+   top: 50%;
+   left: -3rem;
+   width: 2rem;
+   height: 0.5rem;
+   border-radius: 2rem;
+}
+
+.collapse-header__download-logos {
+   width: 20rem;
+   display: block;
+   margin: 4rem auto 0 auto;
+}

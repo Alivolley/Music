@@ -2,8 +2,29 @@
    --primary: #0d0d0d;
    --secondary: #222222;
    --main-yellow: #fc9a35;
+   --white: #fff;
+   --gray: #6c757d;
+}
+
+@font-face {
+   font-family: "mont";
+   src: url(../public/fonts/NeueMontreal-Regular.woff2);
+}
+
+@font-face {
+   font-family: "mont2";
+   src: url(../public/fonts/NeueMontreal-BoldItalic.woff2);
+}
+
+html {
+   font-size: 10px;
+   scroll-behavior: smooth;
 }
 
 body {
    background-color: var(--primary);
+   font-family: "mont";
+   color: white;
+   letter-spacing: 1px;
+   font-size: 1.6rem;
 }

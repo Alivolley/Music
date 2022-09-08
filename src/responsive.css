@@ -1,0 +1,55 @@
+@media (min-width: 350px) {
+   .search-input {
+      width: 20rem;
+   }
+}
+
+@media (min-width: 576px) {
+   .logo-title {
+      display: block;
+   }
+
+   .search-input {
+      width: 25rem;
+   }
+}
+
+/* md */
+
+@media (min-width: 768px) {
+   .uncollapser {
+      display: none;
+   }
+
+   .header-menu {
+      display: block;
+   }
+}
+
+/* lg */
+
+@media (min-width: 992px) {
+   .header-menu__item {
+      margin: 0 3rem;
+      font-size: 2rem;
+   }
+
+   .header-menu__Download {
+      /* margin: 0 3rem; */
+   }
+
+   .header-logo {
+      width: 6rem;
+      height: 6rem;
+   }
+}
+
+/* xl */
+
+@media (min-width: 1200px) {
+}
+
+/* xxl */
+
+@media (min-width: 1400px) {
+}
