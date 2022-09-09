@@ -24,6 +24,15 @@
    .header-menu {
       display: block;
    }
+
+   .permium {
+      align-items: center;
+      margin-top: 10rem;
+   }
+
+   .permium-img {
+      height: auto;
+   }
 }
 
 /* lg */
