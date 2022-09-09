@@ -1,0 +1,88 @@
+.topsongs {
+   margin-top: 15rem;
+   margin-bottom: 35rem;
+}
+
+.topsongs-title {
+   font-size: 2.2rem;
+   font-weight: 700;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   border-bottom: 0.1rem solid var(--gray);
+   padding-bottom: 1.4rem;
+   margin-bottom: 5rem;
+}
+
+.topsongs-view {
+   text-decoration: none;
+   color: var(--main-yellow);
+   font-size: 1.6rem;
+   display: none;
+}
+
+.topsongs-view:hover {
+   color: var(--white);
+}
+
+.topsongs-card {
+   text-decoration: none;
+   display: block;
+   background-color: var(--section-bg);
+   padding: 3rem;
+   border-radius: 0.5rem;
+   margin-bottom: 2.5rem;
+   transition: all 0.2s;
+}
+
+.topsongs-card:hover {
+   background-color: var(--secondary);
+   transform: scale(1.02);
+}
+
+.topsongs-card__info {
+   display: flex;
+   align-items: flex-end;
+}
+
+.topsongs-card__img {
+   width: 10rem;
+   margin-right: 2.5rem;
+}
+
+.topsongs-card__name,
+.topsongs-card__singer {
+   color: var(--main-yellow);
+   font-size: 1.7rem;
+}
+
+.topsongs-card__lyrics {
+   margin-top: 5rem;
+}
+
+.topsongs-card__lyrics-title {
+   color: var(--gray);
+}
+
+.topsongs-card__lyrics-main,
+.topsongs-card__lyrics-rest {
+   color: var(--white);
+}
+
+.topsongs-card__btn {
+   cursor: pointer;
+   display: inline-block;
+   color: var(--white);
+   text-decoration: none;
+   border: 0.2rem solid #fc983580;
+   padding: 0.3rem 3rem;
+   border-radius: 0.7rem;
+   margin: 2rem 0 1rem 0;
+   background-color: transparent;
+   transition: all 0.1s;
+}
+
+.topsongs-card__btn:hover {
+   background-color: var(--main-yellow);
+   color: black;
+}

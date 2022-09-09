@@ -12,6 +12,10 @@
    .search-input {
       width: 25rem;
    }
+
+   .topsongs-view {
+      display: block;
+   }
 }
 
 /* md */
@@ -33,6 +37,10 @@
    .permium-img {
       height: auto;
    }
+
+   .topsongs-title {
+      font-size: 4rem;
+   }
 }
 
 /* lg */
@@ -53,7 +61,7 @@
    }
 
    .land {
-      height: 70rem;
+      height: 90rem;
    }
 }
 
@@ -65,4 +73,8 @@
 /* xxl */
 
 @media (min-width: 1400px) {
+   .topsongs-card__img {
+      width: 14rem;
+      margin-right: 4rem;
+   }
 }
