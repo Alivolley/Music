@@ -1,0 +1,151 @@
+.chosensong {
+   margin-top: 12rem;
+}
+
+.chosensong-song {
+   background-image: linear-gradient(90deg, rgba(13, 13, 13, 0.95) 36%, rgba(13, 13, 13, 0.363) 100%), url("../../../public/pics/taylor.jpg");
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 45rem;
+   padding: 2rem 7rem;
+   box-shadow: 0px 0px 5px 4px #222222;
+}
+
+.chosensong-song__tiltle {
+   margin-top: 13rem;
+   font-size: 3.6rem;
+   color: var(--main-yellow);
+}
+
+.chosensong-song__artist {
+   font-size: 2rem;
+   margin-top: 3rem;
+}
+
+.chosensong-song__album {
+   color: var(--gray);
+}
+
+.chosensong-song__lenght {
+   display: flex;
+   gap: 2rem;
+   align-items: flex-start;
+   margin: 2rem;
+}
+
+.chosensong-song__range {
+   width: 100%;
+   padding: 0;
+}
+
+.chosensong-contolers {
+   display: flex;
+   align-items: center;
+   /* background-color: red; */
+}
+
+.contolers-prev,
+.contolers-pause,
+.contolers-play,
+.contolers-next {
+   margin-left: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0.5rem;
+   background-color: var(--main-yellow);
+   border: none;
+   border-radius: 50%;
+   transition: all 0.1s;
+}
+
+.contolers-pause,
+.contolers-play {
+   padding: 0.9rem;
+}
+
+.contolers-play {
+   margin-left: 0.5rem;
+}
+
+.contolers-prev:hover,
+.contolers-pause:hover,
+.contolers-play:hover,
+.contolers-next:hover {
+   background-color: var(--white);
+   transform: scale(1.07);
+}
+
+.contolers-volume {
+   margin-left: auto;
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.contolers-volume-icon {
+   font-size: 2rem;
+}
+
+.contolers-volume-range {
+   width: 6.5rem;
+}
+
+.chosensong-same {
+   border: 0.1rem solid var(--gray);
+   padding: 0 3rem;
+   margin-top: 15rem;
+}
+
+.chosensong-same__text {
+   text-align: center;
+   font-size: 3rem;
+   border-bottom: 0.2rem solid var(--white);
+   margin: 3rem 0 6rem 0;
+   padding-bottom: 1rem;
+   font-weight: 700;
+}
+
+.chosensong-same__card {
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+   gap: 3rem;
+   padding: 1.5rem 1rem;
+   transition: all 0.1s;
+}
+
+.chosensong-same__card:hover {
+   box-shadow: 0px 0px 5px 4px #222222;
+   transform: scale(1.01);
+}
+
+.chosensong-same__img {
+   width: 8rem;
+}
+
+.chosensong-same__info {
+}
+
+.chosensong-same__song {
+   color: var(--main-yellow);
+}
+
+.chosensong-same__singer {
+   color: var(--gray);
+}
+
+.chosensong-same__icon {
+}
+
+.chosensong-same__view {
+   text-decoration: none;
+   display: inline-block;
+   color: var(--main-yellow);
+   margin: 3rem 0 2rem 0;
+}
+
+.chosensong-same__view:hover {
+   color: var(--white);
+}

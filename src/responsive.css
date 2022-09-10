@@ -2,6 +2,10 @@
    .search-input {
       width: 20rem;
    }
+
+   .contolers-volume-range {
+      width: auto;
+   }
 }
 
 @media (min-width: 576px) {
@@ -15,6 +19,13 @@
 
    .topsongs-view {
       display: block;
+   }
+
+   .contolers-prev,
+   .contolers-pause,
+   .contolers-play,
+   .contolers-next {
+      margin-left: 3rem;
    }
 }
 
@@ -90,11 +101,20 @@
    .land {
       height: 90rem;
    }
+
+   .chosensong-same {
+      margin-left: 2rem;
+      margin-top: 0;
+   }
 }
 
 /* xl */
 
 @media (min-width: 1200px) {
+   .chosensong-same {
+      margin-left: 10rem;
+      margin-top: 0;
+   }
 }
 
 /* xxl */
