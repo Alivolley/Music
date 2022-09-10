@@ -1,6 +1,5 @@
 .topsongs {
    margin-top: 15rem;
-   margin-bottom: 35rem;
 }
 
 .topsongs-title {
@@ -48,12 +47,17 @@
 .topsongs-card__img {
    width: 10rem;
    margin-right: 2.5rem;
+   border-radius: 0.5rem;
 }
 
-.topsongs-card__name,
-.topsongs-card__singer {
+.topsongs-card__name {
    color: var(--main-yellow);
-   font-size: 1.7rem;
+   font-size: 1.9rem;
+}
+
+.topsongs-card__singer {
+   color: var(--gray);
+   font-size: 1.6rem;
 }
 
 .topsongs-card__lyrics {

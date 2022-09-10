@@ -1,0 +1,49 @@
+.trend {
+   margin-top: 15rem;
+}
+
+.trend-card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 6rem;
+   padding: 2rem;
+   box-shadow: 3px 3px 2px 0px #222222;
+   text-decoration: none;
+   transition: all 0.15s;
+   border-radius: 3rem;
+}
+
+.trend-card:hover {
+   box-shadow: 0px 0px 5px 4px #222222;
+   transform: scale(1.01);
+}
+
+.trend-card__img {
+   width: 100%;
+}
+
+.trend-card__info {
+   text-align: center;
+}
+
+.trend-card__song {
+   font-size: 1.5rem;
+   color: var(--white);
+}
+
+.trend-card__singer {
+   color: var(--main-yellow);
+   font-size: 1.3rem;
+}
+
+.trend-card__icon {
+   color: var(--gray);
+   font-size: 3rem;
+   transition: all 0.15s;
+}
+
+.trend-card__icon:hover {
+   color: var(--main-yellow);
+}
