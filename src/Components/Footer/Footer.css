@@ -1,0 +1,109 @@
+.footer {
+   background: var(--secondary);
+   margin-top: 15rem;
+   border-top-right-radius: 4.5rem;
+   border-top-left-radius: 4.5rem;
+   padding-top: 8rem;
+}
+
+.footer .container {
+   position: relative;
+}
+
+.go-top {
+   position: absolute;
+   top: -8rem;
+   background-color: var(--main-yellow);
+   padding: 0.1rem 1rem;
+   font-size: 1.3rem;
+   color: black;
+   font-weight: 900;
+   border-bottom-left-radius: 1rem;
+   border-bottom-right-radius: 1rem;
+   cursor: pointer;
+   border: 0.2rem solid var(--main-yellow);
+   transition: all 0.2s;
+}
+
+.go-top:hover {
+   background-color: var(--secondary);
+   color: var(--white);
+   border-top: none;
+}
+
+.footer-fast-access {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+}
+
+.footer-fast-access__item {
+   color: var(--icon-color);
+   text-decoration: none;
+   transition: all 0.2s;
+}
+
+.footer-fast-access__item:hover {
+   transform: scale(1.2);
+   color: var(--main-yellow);
+}
+
+.footer-contact {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding-top: 6rem;
+   padding-bottom: 6rem;
+   color: var(--icon-color);
+}
+
+.footer-contact__link-wrapper {
+   display: flex;
+   gap: 1rem;
+   margin-top: 2rem;
+}
+
+.footer-contact__link {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 1rem;
+   border-radius: 0.5rem;
+   transition: all 0.2s;
+}
+
+.footer-contact__link:hover {
+   transform: scale(1.2);
+}
+
+.footer-contact__link-telegram {
+   background-color: #2294cf;
+}
+
+.footer-contact__link-whatsapp {
+   background-color: #20e300;
+}
+
+.footer-contact__link-instagram {
+   background-color: #f7027f;
+}
+
+.footer-contact__link-twitter {
+   background-color: #00b8e3;
+}
+
+.footer-contact__icon {
+   width: 2.5rem;
+   height: 2.5rem;
+   color: var(--white);
+}
+
+.footer-copy-right {
+   text-align: center;
+   padding-top: 4rem;
+   padding-bottom: 15rem;
+   color: var(--gray);
+}
