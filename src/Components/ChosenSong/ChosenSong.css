@@ -48,6 +48,7 @@
    outline: none;
    width: 100%;
    height: 0.5rem;
+   cursor: pointer;
 }
 
 .chosensong-song__range::before {
@@ -132,6 +133,7 @@
    outline: none;
    height: 0.3rem;
    width: 6.5rem;
+   cursor: pointer;
 }
 
 .contolers-volume-range::before {

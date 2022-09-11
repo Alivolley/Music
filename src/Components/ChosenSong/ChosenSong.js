@@ -105,6 +105,7 @@ export default function ChosenSong() {
                   <div className="contolers-volume">
                      <FaVolumeUp className="contolers-volume-icon" />
                      <input
+                        title={songVolume}
                         type="range"
                         ref={volumeRange}
                         className="contolers-volume-range"
