@@ -19,7 +19,7 @@ export default function Header() {
             <div className="container ">
                <div className="header-container">
                   <div className="logo-wrapper">
-                     <img className="header-logo" src="/pics/logo.png" alt="" />
+                     <img className="header-logo" src="/pics/jjj.png" alt="" />
                      <p className="logo-title">PRO MUSIC</p>
                   </div>
                   <span className="search">
