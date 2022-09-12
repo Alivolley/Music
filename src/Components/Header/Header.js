@@ -30,7 +30,7 @@ export default function Header() {
                      <Link to="/song/2" className="header-menu__item">
                         My library
                      </Link>
-                     <Link to="/" className="header-menu__item">
+                     <Link to="/allSongs" className="header-menu__item">
                         Songs
                      </Link>
                      <button className="header-menu__Download ">

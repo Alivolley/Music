@@ -1,0 +1,76 @@
+.musicCard {
+   display: block;
+   background-color: var(--secondary);
+   padding: 1.5rem;
+   border-radius: 1.5rem;
+   transition: all 0.15s;
+}
+
+.musicCard:hover {
+   transform: scale(1.01);
+   box-shadow: 0px 0px 5px 4px var(--gray);
+}
+
+.musicCard__icon {
+   fill: transparent;
+   stroke: var(--main-yellow);
+   stroke-width: 0.2rem;
+   transition: all 0.1s;
+   cursor: pointer;
+}
+
+.musicCard__icon:hover {
+   transform: scale(1.2);
+}
+
+.musicCard__icon--like {
+   fill: var(--main-yellow);
+}
+
+.musicCard-img {
+   max-width: 23rem;
+   height: 23rem;
+   display: block;
+   margin: 0 auto;
+   border-radius: 50%;
+   border: 1rem solid var(--primary);
+   outline: 0.2rem solid var(--main-yellow);
+}
+
+.musicCard-title {
+   color: var(--white);
+   font-size: 2rem;
+   margin-top: 4rem;
+}
+
+.musicCard-artist {
+   color: var(--gray);
+   font-size: 1.6rem;
+}
+
+.musicCard-btn {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   border: none;
+   background-color: var(--secondary);
+   color: var(--white);
+   margin: 4rem auto 2rem auto;
+   padding: 0.3rem 2rem;
+   border-radius: 1rem;
+   font-size: 1.8rem;
+   transition: all 0.15s;
+   border: 0.2rem solid var(--main-yellow);
+   width: 10rem;
+   text-decoration: none;
+}
+
+.musicCard-btn:hover {
+   background-color: var(--main-yellow);
+   color: black;
+   font-weight: 900;
+}
+
+.musicCard-btn__icon {
+   font-size: 2.2rem;
+}
