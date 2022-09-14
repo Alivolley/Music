@@ -14,15 +14,14 @@ export default function ChosenSong() {
    const [songVolume, setSongVolume] = useState(80);
    const [mainSong, setMainSong] = useState();
 
-   useEffect(() => {
-      fetch("https://djangorest.pythonanywhere.com/detail/Elaheye Naz/")
-         .then((result) => result.json())
-         .then((res) => {
-            setMainSong(`https://djangorest.pythonanywhere.com${res.file}`);
-            console.log(res);
-         })
-         .catch((err) => console.log(err));
-   }, []);
+   // useEffect(() => {
+   //    fetch("https://djangorest.pythonanywhere.com/detail/Elaheye Naz/")
+   //       .then((result) => result.json())
+   //       .then((res) => {
+   //          // console.log(res);
+   //       });
+   //    // .catch((err) => console.log(err));
+   // }, []);
 
    useEffect(() => {
       chosenSongRange.current.style.setProperty("--completed-area", `${(chosenSongRange.current.value / songDuration) * 100}%`);
@@ -83,7 +82,7 @@ export default function ChosenSong() {
                </div>
                <div className="chosensong-song__lenght">
                   <p className="chosensong-song__lenght-start">{songTimeHandler(songCurrent)}</p>
-                  <audio src={mainSong} ref={chosenSong} onLoadedMetadata={onloadHandler} onPlay={songPlayHandler}></audio>
+                  <audio src="/gorgeous.mp3" ref={chosenSong} onLoadedMetadata={onloadHandler} onPlay={songPlayHandler}></audio>
                   <input
                      type="range"
                      className="chosensong-song__range"

@@ -83,6 +83,15 @@
    .trend-card__icon {
       margin-left: auto;
    }
+
+   .login-title {
+      font-size: 3rem;
+   }
+
+   .login-email__input,
+   .login-password__input {
+      width: 30rem;
+   }
 }
 
 /* lg */
