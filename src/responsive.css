@@ -79,6 +79,10 @@
    .trend-card__icon {
       font-size: 4rem;
    }
+
+   .trend-card__icon {
+      margin-left: auto;
+   }
 }
 
 /* lg */

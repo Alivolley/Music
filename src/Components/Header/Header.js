@@ -27,7 +27,7 @@ export default function Header() {
                      <input type="text" className="search-input" placeholder="Search..." />
                   </span>
                   <ul className="header-menu">
-                     <Link to="/song/2" className="header-menu__item">
+                     <Link to="/" className="header-menu__item">
                         My library
                      </Link>
                      <Link to="/allSongs" className="header-menu__item">

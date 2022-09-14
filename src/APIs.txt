@@ -1,0 +1,23 @@
+صفحه اصلی
+https://djangorest.pythonanywhere.com/
+
+پنل ادمین
+https://djangorest.pythonanywhere.com/admin/
+
+همه ی خواننده ها
+https://djangorest.pythonanywhere.com/singer/all/
+
+همه ی آهنگا
+https://djangorest.pythonanywhere.com/all-musics/
+
+سرچ کردن آهنگ ( بجای ?  باید تایتل یا یه بخش از متن آهنگ گذاشته بشه که سرچ کنه )
+https://djangorest.pythonanywhere.com/search/???
+
+جزءیات یه آهنگ
+https://djangorest.pythonanywhere.com/detail/???
+
+لایک کردن آهنگ
+https://djangorest.pythonanywhere.com/like/Lovely/???
+
+swagger
+https://djangorest.pythonanywhere.com/schema/swagger-ui/

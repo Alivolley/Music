@@ -1,12 +1,13 @@
 .trend {
    margin-top: 15rem;
+   position: relative;
 }
 
 .trend-card {
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: space-between;
+   gap: 3rem;
    margin-bottom: 6rem;
    padding: 2rem;
    box-shadow: 3px 3px 2px 0px #222222;
@@ -37,6 +38,11 @@
 .trend-card__singer {
    color: var(--main-yellow);
    font-size: 1.3rem;
+}
+
+.trend-card__song::first-letter,
+.trend-card__singer::first-letter {
+   text-transform: capitalize;
 }
 
 .trend-card__icon {

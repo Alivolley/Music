@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./TopSongs.css";
+import { GiHearts } from "react-icons/gi";
+import Loading from "../../Loading/Loading";
+import ConectFaild from "../../ConectFaild/ConnectFaild";
 
 export default function TopSongs() {
+   const [allsongs, setAllsongs] = useState();
+   const [topSongs, setTopSongs] = useState();
+   const [connectFaild, setConectFaild] = useState(false);
+
+   useEffect(() => {
+      fetch("https://djangorest.pythonanywhere.com/all-musics/")
+         .then((res) => res.json())
+         .then((data) => setAllsongs(data))
+         .catch((err) => setConectFaild(true));
+   }, []);
+
+   useEffect(() => {
+      if (allsongs) {
+         let chosenSongs = allsongs.filter((song) => song.likes >= 15);
+         setTopSongs(chosenSongs);
+      }
+   }, [allsongs]);
+
    return (
       <div className="container topsongs">
          <h2 className="topsongs-title">
@@ -12,64 +33,33 @@ export default function TopSongs() {
             </Link>
          </h2>
 
+         {!topSongs && !connectFaild && <Loading />}
+         {connectFaild && <ConectFaild />}
+
          <div className="row">
-            <div className="col-12 col-sm-10 col-md-6 col-lg-4">
-               <Link to="/" className="topsongs-card">
-                  <div className="topsongs-card__info">
-                     <img src="/pics/imagine-dragons.jpg" alt="" className="topsongs-card__img" />
-                     <div className="topsongs-card__artist">
-                        <p className="topsongs-card__name">Beliver</p>
-                        <p className="topsongs-card__singer">Imagine Dragons</p>
-                     </div>
-                  </div>
-                  <div className="topsongs-card__lyrics">
-                     <p className="topsongs-card__lyrics-title">lyrics :</p>
-                     <p className="topsongs-card__lyrics-main">
-                        I was broken from a young age <br /> Taking my sulking to the masses <br /> Writing my poems for the few
-                     </p>
-                     <p className="topsongs-card__lyrics-rest">...</p>
-                  </div>
-                  <button className="topsongs-card__btn">Listen</button>
-               </Link>
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-lg-4">
-               <Link to="/" className="topsongs-card">
-                  <div className="topsongs-card__info">
-                     <img src="/pics/the-score.jpg" alt="" className="topsongs-card__img" />
-                     <div className="topsongs-card__artist">
-                        <p className="topsongs-card__name">Shackdown</p>
-                        <p className="topsongs-card__singer">The score</p>
-                     </div>
-                  </div>
-                  <div className="topsongs-card__lyrics">
-                     <p className="topsongs-card__lyrics-title">lyrics :</p>
-                     <p className="topsongs-card__lyrics-main">
-                        All those nights alone <br /> I faced my fears in the mirror <br /> I found my way to show
-                     </p>
-                     <p className="topsongs-card__lyrics-rest">...</p>
-                  </div>
-                  <button className="topsongs-card__btn">Listen</button>
-               </Link>
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-lg-4">
-               <Link to="/" className="topsongs-card">
-                  <div className="topsongs-card__info">
-                     <img src="/pics/queen.jpg" alt="" className="topsongs-card__img" />
-                     <div className="topsongs-card__artist">
-                        <p className="topsongs-card__name">Bohemian Rhapsody</p>
-                        <p className="topsongs-card__singer">Queen</p>
-                     </div>
-                  </div>
-                  <div className="topsongs-card__lyrics">
-                     <p className="topsongs-card__lyrics-title">lyrics :</p>
-                     <p className="topsongs-card__lyrics-main">
-                        Is this the real life? <br /> Is this just fantasy? <br /> Caught in a landside
-                     </p>
-                     <p className="topsongs-card__lyrics-rest">...</p>
-                  </div>
-                  <button className="topsongs-card__btn">Listen</button>
-               </Link>
-            </div>
+            {topSongs &&
+               topSongs.map(
+                  (song, index) =>
+                     index < 3 && (
+                        <div key={song.id} className="col-12 col-sm-10 col-md-6 col-lg-4">
+                           <Link to={`/song/${song.id}`} className="topsongs-card">
+                              <div className="topsongs-card__info">
+                                 <img src={`https://djangorest.pythonanywhere.com${song.avatar}`} alt="" className="topsongs-card__img" />
+                                 <div className="topsongs-card__artist">
+                                    <p className="topsongs-card__name">{song.title}</p>
+                                    <p className="topsongs-card__singer">{song.singer.name}</p>
+                                 </div>
+                              </div>
+                              <div className="topsongs-card__likes">
+                                 <p className="topsongs-card__likes-title">
+                                    Likes of the week : {song.likes} <GiHearts className="topsongs-card__likes-icon" />
+                                 </p>
+                              </div>
+                              <button className="topsongs-card__btn">Listen</button>
+                           </Link>
+                        </div>
+                     )
+               )}
          </div>
       </div>
    );

@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Trends.css";
 import { AiFillPlayCircle } from "react-icons/ai";
+import Loading from "../../Loading/Loading";
+import ConectFaild from "../../ConectFaild/ConnectFaild";
 
 export default function Trends() {
+   const [allsongs, setAllsongs] = useState();
+   const [connectFaild, setConectFaild] = useState(false);
+
+   useEffect(() => {
+      fetch("https://djangorest.pythonanywhere.com/all-musics/")
+         .then((res) => res.json())
+         .then((data) => setAllsongs(data))
+         .catch((err) => setConectFaild(true));
+   }, []);
+
    return (
       <div className="trend container">
          <h2 className="topsongs-title">
@@ -12,67 +24,26 @@ export default function Trends() {
                View all
             </Link>
          </h2>
+
+         {!allsongs && !connectFaild && <Loading />}
+         {connectFaild && <ConectFaild />}
          <div className="row">
-            <div className="col-6">
-               <Link to="/" className="trend-card">
-                  <img src="/pics/imagine-dragons.jpg" alt="" className="trend-card__img" />
-                  <div className="trend-card__info">
-                     <p className="trend-card__song">Beliver</p>
-                     <p className="trend-card__singer">Imagine dragons</p>
-                  </div>
-                  <AiFillPlayCircle className="trend-card__icon" />
-               </Link>
-            </div>
-            <div className="col-6">
-               <Link to="/" className="trend-card">
-                  <img src="/pics/the-score.jpg" alt="" className="trend-card__img" />
-                  <div className="trend-card__info">
-                     <p className="trend-card__song">Beliver</p>
-                     <p className="trend-card__singer">Imagine dragons</p>
-                  </div>
-                  <AiFillPlayCircle className="trend-card__icon" />
-               </Link>
-            </div>
-            <div className="col-6">
-               <Link to="/" className="trend-card">
-                  <img src="/pics/queen.jpg" alt="" className="trend-card__img" />
-                  <div className="trend-card__info">
-                     <p className="trend-card__song">Beliver</p>
-                     <p className="trend-card__singer">Imagine dragons</p>
-                  </div>
-                  <AiFillPlayCircle className="trend-card__icon" />
-               </Link>
-            </div>
-            <div className="col-6">
-               <Link to="/" className="trend-card">
-                  <img src="/pics/imagine-dragons.jpg" alt="" className="trend-card__img" />
-                  <div className="trend-card__info">
-                     <p className="trend-card__song">Beliver</p>
-                     <p className="trend-card__singer">Imagine dragons</p>
-                  </div>
-                  <AiFillPlayCircle className="trend-card__icon" />
-               </Link>
-            </div>
-            <div className="col-6">
-               <Link to="/" className="trend-card">
-                  <img src="/pics/the-score.jpg" alt="" className="trend-card__img" />
-                  <div className="trend-card__info">
-                     <p className="trend-card__song">Beliver</p>
-                     <p className="trend-card__singer">Imagine dragons</p>
-                  </div>
-                  <AiFillPlayCircle className="trend-card__icon" />
-               </Link>
-            </div>
-            <div className="col-6">
-               <Link to="/" className="trend-card">
-                  <img src="/pics/queen.jpg" alt="" className="trend-card__img" />
-                  <div className="trend-card__info">
-                     <p className="trend-card__song">Beliver</p>
-                     <p className="trend-card__singer">Imagine dragons</p>
-                  </div>
-                  <AiFillPlayCircle className="trend-card__icon" />
-               </Link>
-            </div>
+            {allsongs &&
+               allsongs.map(
+                  (song, index) =>
+                     index < 6 && (
+                        <div className="col-6" key={song.id}>
+                           <Link to={`/song/${song.id}`} className="trend-card">
+                              <img src={`https://djangorest.pythonanywhere.com${song.avatar}`} alt="" className="trend-card__img" />
+                              <div className="trend-card__info">
+                                 <p className="trend-card__song">{song.singer.name}</p>
+                                 <p className="trend-card__singer">{song.title}</p>
+                              </div>
+                              <AiFillPlayCircle className="trend-card__icon" />
+                           </Link>
+                        </div>
+                     )
+               )}
          </div>
       </div>
    );

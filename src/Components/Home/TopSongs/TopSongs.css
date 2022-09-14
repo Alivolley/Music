@@ -1,5 +1,6 @@
 .topsongs {
    margin-top: 15rem;
+   position: relative;
 }
 
 .topsongs-title {
@@ -60,17 +61,22 @@
    font-size: 1.6rem;
 }
 
-.topsongs-card__lyrics {
-   margin-top: 5rem;
+.topsongs-card__name,
+.topsongs-card__singer {
+   text-transform: capitalize;
 }
 
-.topsongs-card__lyrics-title {
-   color: var(--gray);
+.topsongs-card__likes {
+   margin-top: 4rem;
 }
 
-.topsongs-card__lyrics-main,
-.topsongs-card__lyrics-rest {
+.topsongs-card__likes-title {
    color: var(--white);
+}
+
+.topsongs-card__likes-icon {
+   color: var(--main-yellow);
+   font-size: 1.3rem;
 }
 
 .topsongs-card__btn {
