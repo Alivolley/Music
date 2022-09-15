@@ -102,6 +102,10 @@
       font-size: 2rem;
    }
 
+   .header-menu__login {
+      margin-left: 2rem;
+   }
+
    .header-logo {
       width: 6rem;
       height: 6rem;

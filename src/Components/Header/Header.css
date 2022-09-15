@@ -23,20 +23,33 @@
    color: var(--main-yellow);
 }
 
-.header-menu__Download {
+.header-menu__login {
    background-color: var(--main-yellow);
    padding: 0.5rem 1rem;
+   text-decoration: none;
+   color: black;
+   font-size: 1.7rem;
+   border-radius: 0.5rem;
+   transition: all 0.1s;
+   border: 0.2rem solid var(--main-yellow);
+}
+
+.header-menu__login:hover {
+   background-color: transparent;
+   color: var(--main-yellow);
 }
 
 .header-container {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   font-size: 1.7rem;
 }
 
 .header-logo {
    width: 5rem;
    height: 5rem;
+   cursor: pointer;
 }
 
 .logo-title {

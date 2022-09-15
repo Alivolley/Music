@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { BiSearchAlt } from "react-icons/bi";
-import { CgMenuMotion } from "react-icons/cg";
-import { BsCloudDownload } from "react-icons/bs";
+import { CgMenuMotion, CgLogIn } from "react-icons/cg";
+
 import CollapseHeader from "./CollapseHeader";
 
 export default function Header() {
@@ -19,7 +19,9 @@ export default function Header() {
             <div className="container ">
                <div className="header-container">
                   <div className="logo-wrapper">
-                     <img className="header-logo" src="/pics/jjj.png" alt="" />
+                     <Link to="/">
+                        <img className="header-logo" src="/pics/jjj.png" alt="" />
+                     </Link>
                      <p className="logo-title">PRO MUSIC</p>
                   </div>
                   <span className="search">
@@ -33,9 +35,9 @@ export default function Header() {
                      <Link to="/allSongs" className="header-menu__item">
                         Songs
                      </Link>
-                     <button className="header-menu__Download ">
-                        Download app <BsCloudDownload />
-                     </button>
+                     <Link to="/" className="header-menu__login">
+                        Login <CgLogIn />
+                     </Link>
                   </ul>
                   <CgMenuMotion className="uncollapser" onClick={() => setShowCollapse(true)}></CgMenuMotion>
                </div>

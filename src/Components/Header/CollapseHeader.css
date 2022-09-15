@@ -26,7 +26,14 @@
 .collapse-header__icon {
    display: block;
    width: 10rem;
-   margin: 0 auto 4rem auto;
+   margin: 0 auto;
+}
+
+.collapse-header-title {
+   text-align: center;
+   font-family: "mont2";
+   font-size: 1.7rem;
+   margin: 1rem 0 7rem 0;
 }
 
 .collapse-header__item {
@@ -40,12 +47,15 @@
    transition: all 0.2s;
 }
 
+.collapse-header__item:hover {
+   color: var(--main-yellow);
+}
+
 .collapse-wrapper .active {
    margin-left: 6rem;
    position: relative;
    border-left: 0.4rem solid var(--main-yellow);
    padding-left: 1.5rem;
-   /* border-bottom: 0.2rem solid var(--main-yellow); */
    border-bottom-left-radius: 3rem;
 }
 
