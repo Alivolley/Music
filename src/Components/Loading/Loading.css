@@ -4,6 +4,11 @@
    transform: translate(-50%, -50%);
    position: absolute;
 }
+
+.change {
+   top: 30% !important;
+}
+
 .bar {
    width: 10px;
    height: 70px;

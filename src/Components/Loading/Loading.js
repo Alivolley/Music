@@ -1,9 +1,9 @@
 import React from "react";
 import "./Loading.css";
 
-export default function Loading() {
+export default function Loading(props) {
    return (
-      <div className="middle">
+      <div className={`${props.change ? "middle change" : "middle"}`}>
          <div className="bar bar1"></div>
          <div className="bar bar2"></div>
          <div className="bar bar3"></div>
