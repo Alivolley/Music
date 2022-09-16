@@ -37,7 +37,8 @@
    }
 
    .header-menu {
-      display: block;
+      display: flex;
+      align-items: center;
    }
 
    .permium {
@@ -126,6 +127,10 @@
 
    .musicCard-img {
       max-width: 24rem;
+   }
+
+   .header-select {
+      font-size: 2rem;
    }
 }
 

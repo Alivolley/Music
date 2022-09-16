@@ -21,3 +21,6 @@ https://djangorest.pythonanywhere.com/like/Lovely/???
 
 swagger
 https://djangorest.pythonanywhere.com/schema/swagger-ui/
+
+genres
+https://djangorest.pythonanywhere.com/all-styles/
