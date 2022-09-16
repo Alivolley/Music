@@ -5,13 +5,12 @@
 
 .genre-title {
    text-align: center;
-   font-size: 5rem;
+   font-size: 4rem;
    font-family: "mont2";
    margin-bottom: 2rem;
 }
 
 .genre-line {
-   width: 10rem;
    height: 0.1rem;
    background-color: var(--gray);
    margin-bottom: 5rem;

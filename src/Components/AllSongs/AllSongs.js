@@ -15,7 +15,7 @@ export default function AllSongs() {
          .catch((err) => setConectFaild(true));
    }, []);
 
-   console.log(allSongs && allSongs[1]);
+   // console.log(allSongs && allSongs[1]);
 
    return (
       <div className="container allSongs">

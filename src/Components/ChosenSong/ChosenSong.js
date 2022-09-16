@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
-import ReactJkMusicPlayer from "react-jinke-music-player";
-import "react-jinke-music-player/assets/index.css";
 import "./ChosenSong.css";
 import { Link, useParams } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
@@ -43,6 +40,8 @@ export default function ChosenSong() {
             .catch((err) => setConectFaild(true));
    }, [mainSong]);
 
+   // console.log(mainSong);
+
    return (
       <div className="chosensong container">
          {!mainSong && !connectFaild && <Loading change={true} />}
@@ -50,7 +49,6 @@ export default function ChosenSong() {
 
          {mainSong && (
             <div className="row">
-               <ReactJkMusicPlayer audioLists={options} autoPlay={false} toggleMode={false} mode="full" />
                <div className="col-12 col-lg-8">
                   <div className="row chosensong-detail">
                      <div className="col-12 col-md-6">
@@ -87,6 +85,7 @@ export default function ChosenSong() {
                         <div className="chosensong-pic" style={{ backgroundImage: mainSongPic }}></div>
                      </div>
                   </div>
+                  <audio className="col-12 chosensong-main-song" src={`https://djangorest.pythonanywhere.com${mainSong.file}`} controls></audio>
                </div>
 
                <div className="col-12 col-lg-4">
