@@ -4,6 +4,7 @@
    padding: 1.5rem;
    border-radius: 1.5rem;
    transition: all 0.15s;
+   margin-top: 5rem;
 }
 
 .musicCard:hover {
@@ -46,6 +47,11 @@
 .musicCard-artist {
    color: var(--gray);
    font-size: 1.6rem;
+}
+
+.musicCard-title::first-letter,
+.musicCard-artist::first-letter {
+   text-transform: capitalize;
 }
 
 .musicCard-btn {

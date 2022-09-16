@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./MusicCard.css";
 import { BiPlayCircle } from "react-icons/bi";
 
-export default function MusicCard(props) {
+export default function MusicCard({ img, title, singer, route }) {
    const [liked, setLiked] = useState(false);
 
    const addLikeClass = () => {
@@ -12,13 +12,7 @@ export default function MusicCard(props) {
 
    return (
       <>
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <div to="/" className="musicCard">
+         <div className="musicCard">
             <svg
                onClick={addLikeClass}
                className={`musicCard__icon ${liked ? "musicCard__icon--like" : ""}`}
@@ -34,10 +28,10 @@ export default function MusicCard(props) {
                   transform="translate(2.716 20.496) rotate(-45)"
                ></path>
             </svg>
-            <img className="musicCard-img" src={props.img} alt="" />
-            <p className="musicCard-title">King</p>
-            <p className="musicCard-artist">Zayde Wølf</p>
-            <Link to="/" className="musicCard-btn">
+            <img className="musicCard-img" src={img} alt="" />
+            <p className="musicCard-title">{title}</p>
+            <p className="musicCard-artist">{singer}</p>
+            <Link to={`/song/${route}`} className="musicCard-btn">
                play
                <BiPlayCircle className="musicCard-btn__icon" />
             </Link>

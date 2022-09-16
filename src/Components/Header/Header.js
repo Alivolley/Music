@@ -26,9 +26,16 @@ export default function Header() {
          .catch((err) => console.log(err));
    }, []);
 
+   useEffect(() => {
+      setSelectShow(false);
+      setShowCollapse(false);
+   }, [window.location.pathname]);
+
    const unshowCollapseMenu = () => {
       setShowCollapse(false);
    };
+
+   // console.log(selectItems && selectItems[1]);
 
    return (
       <>
@@ -55,7 +62,7 @@ export default function Header() {
                         </div>
                         <div className="header-opts">
                            {allSongs && (
-                              <Link to="/" className="header-option">
+                              <Link to="/allSongs" className="header-option">
                                  all songs{" "}
                                  <Badge pill bg="" className="header-badge">
                                     {allSongs.length}
@@ -65,12 +72,12 @@ export default function Header() {
 
                            {selectItems &&
                               selectItems.map((genre) => (
-                                 <Link key={genre.id} to="/" className="header-option">
+                                 <a key={genre.id} href={`/genres/${genre.title}`} className="header-option">
                                     {genre.title}{" "}
                                     <Badge pill bg="" className="header-badge">
                                        {genre.music_count}
                                     </Badge>
-                                 </Link>
+                                 </a>
                               ))}
 
                            <div className="header-option__line"></div>

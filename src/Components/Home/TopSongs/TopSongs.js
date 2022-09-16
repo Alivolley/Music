@@ -33,7 +33,7 @@ export default function TopSongs() {
             </Link>
          </h2>
 
-         {!topSongs && !connectFaild && <Loading />}
+         {!topSongs && !connectFaild && <Loading change={true} />}
          {connectFaild && <ConectFaild />}
 
          <div className="row">

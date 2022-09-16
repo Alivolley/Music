@@ -1,30 +1,36 @@
 import React, { useEffect, useState } from "react";
-import "./AllSongs.css";
-import MusicCard from "../MusicCard/MusicCard";
-import Loading from "../Loading/Loading";
+import { useParams } from "react-router-dom";
 import ConectFaild from "../ConectFaild/ConnectFaild";
+import Loading from "../Loading/Loading";
+import MusicCard from "../MusicCard/MusicCard";
+import "./Genres.css";
 
-export default function AllSongs() {
-   const [allSongs, setAllSongs] = useState();
+export default function Genres() {
+   const [genreSongs, setGenreSongs] = useState();
    const [connectFaild, setConectFaild] = useState(false);
+
+   let params = useParams();
 
    useEffect(() => {
       fetch("https://djangorest.pythonanywhere.com/all-musics/")
          .then((res) => res.json())
-         .then((data) => setAllSongs(data))
+         .then((data) => {
+            setGenreSongs(data.filter((item) => item.style.title === params.genre));
+         })
          .catch((err) => setConectFaild(true));
    }, []);
 
-   console.log(allSongs && allSongs[1]);
-
    return (
-      <div className="container allSongs">
+      <div className="container genres">
          <div className="row">
-            {!allSongs && !connectFaild && <Loading />}
+            <h2 className="genre-title">All the {params.genre} songs</h2>
+            <div className="genre-line"></div>
+
+            {!genreSongs && !connectFaild && <Loading />}
             {connectFaild && <ConectFaild />}
 
-            {allSongs &&
-               allSongs.map((song) => (
+            {genreSongs &&
+               genreSongs.map((song) => (
                   <div key={song.id} className="col-12 col-sm-6 col-lg-4 col-xl-3">
                      <MusicCard title={song.title} singer={song.singer.name} route={song.id} img={`https://djangorest.pythonanywhere.com${song.avatar}`} />
                   </div>

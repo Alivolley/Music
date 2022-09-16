@@ -23,6 +23,10 @@ export default function CollapseHeader(props) {
          .catch((err) => console.log(err));
    }, []);
 
+   useEffect(() => {
+      setSelectShow(false);
+   }, [window.location.pathname]);
+
    return (
       <div className={`collapse-header ${props.show ? "collapse-header--show " : ""}`}>
          <div className="container">
@@ -43,7 +47,7 @@ export default function CollapseHeader(props) {
                      </div>
                      <div className="collapse-opts">
                         {allSongs && (
-                           <Link to="/" className="collapse-option">
+                           <Link to="/allSongs" className="collapse-option">
                               all songs{" "}
                               <Badge pill bg="" className="collapse-badge">
                                  {allSongs.length}
@@ -53,12 +57,12 @@ export default function CollapseHeader(props) {
 
                         {selectItems &&
                            selectItems.map((genre) => (
-                              <Link key={genre.id} to="/" className="collapse-option">
+                              <a key={genre.id} href={`/genres/${genre.title}`} className="collapse-option">
                                  {genre.title}{" "}
                                  <Badge pill bg="" className="collapse-badge">
                                     {genre.music_count}
                                  </Badge>
-                              </Link>
+                              </a>
                            ))}
 
                         <div className="collapse-option__line"></div>
