@@ -20,7 +20,7 @@ export default function Trends() {
       <div className="trend container">
          <h2 className="topsongs-title">
             What is trend
-            <Link to="/" className="topsongs-view">
+            <Link to="/allSongs" className="topsongs-view">
                View all
             </Link>
          </h2>

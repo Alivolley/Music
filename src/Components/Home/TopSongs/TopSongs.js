@@ -28,7 +28,7 @@ export default function TopSongs() {
       <div className="container topsongs">
          <h2 className="topsongs-title">
             Top songs of the week
-            <Link to="/" className="topsongs-view">
+            <Link to="/allSongs" className="topsongs-view">
                View all
             </Link>
          </h2>

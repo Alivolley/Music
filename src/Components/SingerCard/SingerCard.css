@@ -1,0 +1,63 @@
+.singercard {
+   box-shadow: 0px 0px 5px 2px var(--gray);
+   display: flex;
+   margin-top: 4rem;
+}
+
+.singercard-img {
+   width: 11rem;
+   height: 15rem;
+   border-top-right-radius: 50%;
+   border-bottom-right-radius: 50%;
+}
+
+.singercard-wrapper {
+   font-size: 1.4rem;
+   padding-left: 1.5rem;
+   margin-top: 1.5rem;
+}
+
+.singercard-name__wrapper,
+.singercard-genre__wrapper {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.singercard-name__label {
+}
+
+.singercard-name__main {
+   color: var(--main-yellow);
+}
+
+.singercard-genre__label {
+   color: var(--gray);
+}
+
+.singercard-genre__main {
+   color: var(--main-yellow);
+}
+
+.singercard-name__main::first-letter,
+.singercard-genre__main::first-letter {
+   text-transform: capitalize;
+}
+
+.singercard-btn {
+   display: inline-block;
+   text-decoration: none;
+   border: 0.2rem solid var(--main-yellow);
+   margin-top: auto;
+   color: var(--white);
+   padding: 0.5rem 0.9rem;
+   font-size: 1.3rem;
+   border-radius: 1rem;
+   text-align: center;
+   transition: all 0.2s;
+}
+
+.singercard-btn:hover {
+   background-color: var(--main-yellow);
+   color: black;
+   font-weight: 700;
+}

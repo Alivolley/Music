@@ -66,7 +66,7 @@ export default function CollapseHeader(props) {
                            ))}
 
                         <div className="collapse-option__line"></div>
-                        <Link to="/" className="collapse-option">
+                        <Link to="/singers" className="collapse-option">
                            all Singers
                         </Link>
                      </div>

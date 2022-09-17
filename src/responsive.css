@@ -6,6 +6,16 @@
    .contolers-volume-range {
       width: auto;
    }
+
+   .singercard-img {
+      width: 14rem;
+      height: 14rem;
+   }
+
+   .singercard-wrapper {
+      margin-top: auto;
+      margin-bottom: auto;
+   }
 }
 
 @media (min-width: 576px) {
@@ -26,6 +36,16 @@
    .contolers-play,
    .contolers-next {
       margin-left: 3rem;
+   }
+
+   .singercard-wrapper {
+      font-size: 1.6rem;
+      margin-left: 5rem;
+   }
+
+   .singercard-name__label,
+   .singercard-genre__label {
+      padding-right: 0.5rem;
    }
 }
 
@@ -93,6 +113,11 @@
    .login-password__input {
       width: 30rem;
    }
+
+   .singercard-wrapper {
+      margin-left: 0;
+      /* padding-right: 0.5rem; */
+   }
 }
 
 /* lg */
@@ -132,6 +157,10 @@
    .header-select {
       font-size: 2rem;
    }
+
+   .singercard-wrapper {
+      margin-left: 5rem;
+   }
 }
 
 /* xl */
@@ -141,6 +170,30 @@
       margin-left: 10rem;
       margin-top: 0;
    }
+
+   .singercard-img {
+      width: 26rem;
+      height: auto;
+   }
+
+   .singercard-name__label,
+   .singercard-name__main,
+   .singercard-genre__label,
+   .singercard-genre__main {
+      font-size: 1.8rem;
+   }
+
+   .singercard-btn {
+      font-size: 1.5rem;
+      width: fit-content;
+   }
+
+   .singercard-wrapper {
+      margin-left: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+   }
 }
 
 /* xxl */
@@ -149,5 +202,9 @@
    .topsongs-card__img {
       width: 14rem;
       margin-right: 4rem;
+   }
+
+   .singercard-img {
+      width: 29rem;
    }
 }

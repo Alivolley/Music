@@ -81,7 +81,7 @@ export default function Header() {
                               ))}
 
                            <div className="header-option__line"></div>
-                           <Link to="/" className="header-option">
+                           <Link to="/singers" className="header-option">
                               all Singers
                            </Link>
                         </div>
