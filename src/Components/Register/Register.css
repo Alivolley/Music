@@ -1,4 +1,4 @@
-.login {
+.register {
    margin-top: 16rem;
    position: relative;
    display: flex;
@@ -6,37 +6,34 @@
    align-items: center;
 }
 
-.login-title {
-   font-size: 2.2rem;
-   text-align: center;
-}
-
-.login-title__icon {
-   color: var(--main-yellow);
-}
-
-.login-icon {
+.register-icon {
    font-size: 13rem;
    border: 0.3rem solid var(--white);
    border-radius: 50%;
-   margin-top: 6rem;
-   margin-bottom: 4rem;
+   margin-top: 2rem;
+   margin-bottom: 2rem;
 }
 
-.login-email__wrapper,
-.login-password__wrapper {
+.register-email__wrapper,
+.register-username__wrapper,
+.register-confirm__wrapper,
+.register-password__wrapper {
    display: flex;
    align-items: flex-end;
    gap: 1rem;
 }
 
-.login-email__icon,
-.login-password__icon {
+.register-email__icon,
+.register-username__icon,
+.register-confirm__icon,
+.register-password__icon {
    font-size: 2rem;
 }
 
-.login-email__input,
-.login-password__input {
+.register-email__input,
+.register-username__input,
+.register-confirm__input,
+.register-password__input {
    background-color: transparent;
    border: none;
    border-bottom: 0.2rem solid var(--gray);
@@ -46,24 +43,8 @@
    font-size: 2rem;
 }
 
-.login-password-visiblity {
-   font-size: 2rem;
-   cursor: pointer;
-}
-
-.login-password-visible:hover {
-   color: var(--main-yellow);
-}
-
-.login-valid-messege {
-   margin-top: 2rem;
-   text-align: center;
-   font-size: 1.8rem;
-   color: red;
-}
-
-.login-btn {
-   margin-top: 3rem;
+.register-btn {
+   margin-top: 5rem;
    padding: 0.3rem 5rem;
    background-color: transparent;
    color: var(--white);
@@ -71,23 +52,34 @@
    transition: all 0.2s;
    display: block;
    width: 20rem;
-   margin-left: auto;
    margin-right: auto;
+   margin-left: auto;
 }
 
-.login-email__input:focus,
-.login-password__input:focus {
+.register-password-visiblity {
+   font-size: 2rem;
+   cursor: pointer;
+}
+
+.register-password-visiblity:hover {
+   color: var(--main-yellow);
+}
+
+.register-email__input:focus,
+.register-username__input:focus,
+.register-confirm__input:focus,
+.register-password__input:focus {
    color: var(--main-yellow);
    outline: none;
 }
 
-.login-btn:hover {
+.register-btn:hover {
    background-color: var(--main-yellow);
    color: black;
    border-color: var(--main-yellow);
 }
 
-.login-goRegister {
+.register-goRegister {
    color: var(--white);
    text-decoration: none;
    margin-top: 2rem;
@@ -95,6 +87,14 @@
    transition: all 0.2s;
 }
 
-.login-goRegister:hover {
+.register-goRegister:hover {
    color: var(--main-yellow);
+}
+
+.register-valid__email-messege,
+.register-valid__password-messege {
+   margin-top: 2rem;
+   text-align: center;
+   font-size: 1.8rem;
+   color: red;
 }

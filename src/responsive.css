@@ -114,6 +114,13 @@
       width: 30rem;
    }
 
+   .register-email__input,
+   .register-username__input,
+   .register-confirm__input,
+   .register-password__input {
+      width: 30rem;
+   }
+
    .singercard-wrapper {
       margin-left: 0;
       /* padding-right: 0.5rem; */

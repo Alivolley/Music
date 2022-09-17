@@ -24,3 +24,9 @@ https://djangorest.pythonanywhere.com/schema/swagger-ui/
 
 genres
 https://djangorest.pythonanywhere.com/all-styles/
+
+register
+https://djangorest.pythonanywhere.com/accounts/register/
+
+login
+https://djangorest.pythonanywhere.com/accounts/token/
