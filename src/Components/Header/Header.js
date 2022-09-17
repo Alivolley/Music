@@ -87,7 +87,7 @@ export default function Header() {
                         </div>
                      </div>
 
-                     <Link to="/" className="header-menu__login">
+                     <Link to="/login" className="header-menu__login">
                         Login <CgLogIn />
                      </Link>
                   </ul>

@@ -71,7 +71,7 @@ export default function CollapseHeader(props) {
                         </Link>
                      </div>
                   </div>
-                  <Link to="/" className="collapse-header__item">
+                  <Link to="/login" className="collapse-header__item">
                      Login <CgLogIn />
                   </Link>
                </ul>
