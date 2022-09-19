@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import { BiSearchAlt } from "react-icons/bi";
+import { BiSearchAlt, BiUserCheck } from "react-icons/bi";
 import { CgMenuMotion, CgLogIn } from "react-icons/cg";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import Badge from "react-bootstrap/Badge";
-
 import CollapseHeader from "./CollapseHeader";
+import Cookies from "js-cookie";
 
 export default function Header() {
    const [showCollapse, setShowCollapse] = useState(false);
@@ -34,8 +34,6 @@ export default function Header() {
    const unshowCollapseMenu = () => {
       setShowCollapse(false);
    };
-
-   // console.log(selectItems && selectItems[1]);
 
    return (
       <>
@@ -87,9 +85,15 @@ export default function Header() {
                         </div>
                      </div>
 
-                     <Link to="/login" className="header-menu__login">
-                        Login <CgLogIn />
-                     </Link>
+                     {Cookies.get("access") ? (
+                        <Link to="/">
+                           <BiUserCheck className="isLogin" />
+                        </Link>
+                     ) : (
+                        <Link to="/login" className="header-menu__login">
+                           Login <CgLogIn />
+                        </Link>
+                     )}
                   </ul>
                   <CgMenuMotion className="uncollapser" onClick={() => setShowCollapse(true)}></CgMenuMotion>
                </div>

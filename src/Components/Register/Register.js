@@ -4,8 +4,10 @@ import { BiUserPin } from "react-icons/bi";
 import { GiConfirmed } from "react-icons/gi";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./Register.css";
+import ModalComp from "../ModalComp/ModalComp";
+import Loading from "../Loading/Loading";
 
 export default function Register() {
    const [usernameValue, setUsernameValue] = useState("");
@@ -15,8 +17,10 @@ export default function Register() {
    const [showPass, setShowPass] = useState(false);
    const [notValidEmail, setNotValidEmail] = useState(false);
    const [notValidPass, setNotValidPass] = useState(false);
+   const [showModal, setShowModal] = useState(false);
+   const [modalText, setModalText] = useState();
 
-   let pattern = /[a-z0-9]+@[a-z]{5,6}\.[a-z]{2,3}/g;
+   let navigation = useNavigate();
 
    const changevisibilty = () => {
       setShowPass((prev) => !prev);
@@ -24,14 +28,53 @@ export default function Register() {
 
    const checkForm = (e) => {
       e.preventDefault();
+      let pattern = /[a-z0-9]+@[a-z]{5,6}\.[a-z]{2,3}/g;
       let validateEmail = pattern.test(emailValue);
       !validateEmail ? setNotValidEmail(true) : setNotValidEmail(false);
-      console.log(validateEmail);
       passwordValue !== confirmValue ? setNotValidPass(true) : setNotValidPass(false);
+      if (validateEmail && passwordValue && confirmValue && passwordValue === confirmValue && usernameValue) {
+         setModalText(<Loading change={true} />);
+         setShowModal(true);
+         let usernameInfo = { username: usernameValue, email: emailValue, password: passwordValue, password2: passwordValue };
+         fetch("https://djangorest.pythonanywhere.com/accounts/register/", {
+            headers: {
+               "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: JSON.stringify(usernameInfo),
+         })
+            .then((res) => {
+               // console.log(res);
+               if (res.statusText === "Created") {
+                  setModalText("You regitered successfully :) . Now you must login");
+                  setTimeout(() => {
+                     navigation("/login");
+                  }, 2000);
+               } else if (res.statusText === "Conflict") {
+                  setModalText("!!! A user exist with this information");
+               } else {
+                  setModalText("!!! error occurred");
+               }
+            })
+            .catch((err) => {
+               // console.log(err);
+               if (err.statusText === "Conflict") {
+                  setModalText("!!! A user exist with this information");
+               } else {
+                  setModalText("!!! error occurred");
+               }
+            });
+      }
+   };
+
+   const closeModal = () => {
+      setShowModal(false);
    };
 
    return (
       <div className="register container">
+         <ModalComp show={showModal} text={modalText} closeModal={closeModal} />
+
          <AiOutlineUser className="register-icon" />
          <form action="" className="register-form" onSubmit={checkForm}>
             <div className="register-username__wrapper">

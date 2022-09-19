@@ -5,6 +5,8 @@ import { IoMdCloseCircleOutline } from "react-icons/io";
 import { CgLogIn } from "react-icons/cg";
 import { MdOutlineArrowRight } from "react-icons/md";
 import Badge from "react-bootstrap/esm/Badge";
+import Cookies from "js-cookie";
+import { BiUserCheck } from "react-icons/bi";
 
 export default function CollapseHeader(props) {
    const [selectShow, setSelectShow] = useState(false);
@@ -35,7 +37,7 @@ export default function CollapseHeader(props) {
                <img src="/pics/jjj.png" alt="" className="collapse-header__icon" />
                <p className="collapse-header-title">PRO MUSIC</p>
                <ul className="collapse-header__items">
-                  <Link to="/" className="collapse-header__item active">
+                  <Link to="/" className="collapse-header__item">
                      Home
                   </Link>
                   <Link to="/" className="collapse-header__item ">
@@ -71,9 +73,16 @@ export default function CollapseHeader(props) {
                         </Link>
                      </div>
                   </div>
-                  <Link to="/login" className="collapse-header__item">
-                     Login <CgLogIn />
-                  </Link>
+
+                  {Cookies.get("access") ? (
+                     <Link to="/">
+                        <BiUserCheck className="isLogin" />
+                     </Link>
+                  ) : (
+                     <Link to="/login" className="collapse-header__item">
+                        Login <CgLogIn />
+                     </Link>
+                  )}
                </ul>
             </div>
          </div>

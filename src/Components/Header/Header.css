@@ -107,6 +107,21 @@
    color: var(--main-yellow);
 }
 
+.isLogin {
+   background-color: var(--main-yellow);
+   font-size: 4rem;
+   border-radius: 1rem;
+   border: 0.2rem solid var(--main-yellow);
+   color: black;
+   cursor: pointer;
+   transition: all 0.1s;
+}
+
+.isLogin:hover {
+   background-color: transparent;
+   color: var(--main-yellow);
+}
+
 .header-container {
    display: flex;
    justify-content: space-between;

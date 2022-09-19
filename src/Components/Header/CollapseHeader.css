@@ -36,8 +36,11 @@
    margin: 1rem 0 7rem 0;
 }
 
+.collapse-header__items {
+   margin-left: 5rem;
+}
+
 .collapse-header__item {
-   margin: 1rem 3rem;
    font-size: 2rem;
    display: block;
    text-decoration: none;
@@ -51,25 +54,6 @@
    color: var(--main-yellow);
 }
 
-.collapse-wrapper .active {
-   margin-left: 6rem;
-   position: relative;
-   border-left: 0.4rem solid var(--main-yellow);
-   padding-left: 1.5rem;
-   border-bottom-left-radius: 3rem;
-}
-
-.collapse-wrapper .active::before {
-   content: "";
-   position: absolute;
-   background-color: var(--main-yellow);
-   top: 50%;
-   left: -3rem;
-   width: 2rem;
-   height: 0.5rem;
-   border-radius: 2rem;
-}
-
 .collapse-header__download-logos {
    width: 20rem;
    display: block;
@@ -79,7 +63,6 @@
 .collapse-songs {
    cursor: pointer;
    position: relative;
-   margin: 0 2rem;
 }
 
 .collapse-select:hover {

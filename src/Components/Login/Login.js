@@ -4,15 +4,21 @@ import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineUser } from "react-icons/
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { TbAlertOctagon } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Cookie from "js-cookie";
+import Cookies from "js-cookie";
+import ModalComp from "../ModalComp/ModalComp";
+import Loading from "../Loading/Loading";
 
 export default function Login() {
    const [showPass, setShowPass] = useState(false);
    const [notValid, setNotValid] = useState(false);
    const [emailValue, setEmailValue] = useState("");
    const [passwordValue, setPasswordValue] = useState("");
+   const [showModal, setShowModal] = useState(false);
+   const [modalText, setModalText] = useState();
 
-   let pattern = /[a-z0-9]+@[a-z]{5,6}\.[a-z]{2,3}/g;
+   let navigation = useNavigate();
 
    const changevisibilty = () => {
       setShowPass((prev) => !prev);
@@ -20,13 +26,48 @@ export default function Login() {
 
    const checkForm = (e) => {
       e.preventDefault();
+      let pattern = /[a-z0-9]+@[a-z]{5,6}\.[a-z]{2,3}/g;
       let validateEmail = pattern.test(emailValue);
-      console.log(validateEmail);
       !validateEmail ? setNotValid(true) : setNotValid(false);
+      if (validateEmail && passwordValue) {
+         setModalText(<Loading change={true} />);
+         setShowModal(true);
+         let usernameInfo = { email: emailValue, password: passwordValue };
+         fetch("https://djangorest.pythonanywhere.com/accounts/login/", {
+            headers: {
+               "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: JSON.stringify(usernameInfo),
+         })
+            .then((res) => {
+               if (res.status === 200) {
+                  return res.json();
+               } else {
+                  setModalText("!!! Password or Email is wrong .");
+               }
+            })
+            .then((data) => {
+               Cookies.set("refresh", data.refresh, { expires: 1 });
+               Cookies.set("access", data.access, { expires: 1 });
+               setModalText("You logged in successfully :)");
+
+               setTimeout(() => {
+                  navigation("/");
+               }, 1500);
+            })
+            .catch((err) => setModalText("!!! Password or Email is wrong ."));
+      }
+   };
+
+   const closeModal = () => {
+      setShowModal(false);
    };
 
    return (
       <div className="login container">
+         <ModalComp show={showModal} text={modalText} closeModal={closeModal} />
+
          <h2 className="login-title">
             <TbAlertOctagon className="login-title__icon" /> You need to login first to access :
          </h2>

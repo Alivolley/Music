@@ -14,7 +14,7 @@ export default function Singers() {
          .then((data) => setAllSingers(data))
          .catch((err) => setConectFaild(true));
    }, []);
-   console.log(allSingers && allSingers[1].styles);
+   // console.log(allSingers && allSingers[1].styles);
 
    return (
       <div className="container singers">
