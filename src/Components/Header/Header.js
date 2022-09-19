@@ -86,9 +86,7 @@ export default function Header() {
                      </div>
 
                      {Cookies.get("access") ? (
-                        <Link to="/">
-                           <BiUserCheck className="isLogin" />
-                        </Link>
+                        <BiUserCheck className="isLogin" />
                      ) : (
                         <Link to="/login" className="header-menu__login">
                            Login <CgLogIn />

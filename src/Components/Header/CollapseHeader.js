@@ -75,9 +75,7 @@ export default function CollapseHeader(props) {
                   </div>
 
                   {Cookies.get("access") ? (
-                     <Link to="/">
-                        <BiUserCheck className="isLogin" />
-                     </Link>
+                     <BiUserCheck className="isLogin" />
                   ) : (
                      <Link to="/login" className="collapse-header__item">
                         Login <CgLogIn />

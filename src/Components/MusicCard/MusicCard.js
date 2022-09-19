@@ -1,12 +1,47 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./MusicCard.css";
 import { BiPlayCircle } from "react-icons/bi";
+import Cookies from "js-cookie";
 
 export default function MusicCard({ img, title, singer, route }) {
    const [liked, setLiked] = useState(false);
 
+   let navigation = useNavigate();
+
+   useEffect(() => {
+      fetch("https://djangorest.pythonanywhere.com/accounts/profile/", {
+         headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${Cookies.get("access")}`,
+         },
+         method: "GET",
+      })
+         .then((res) => res.json())
+         .then((data) => {
+            let isLiked = data.likes.some((song) => song.music.id === route);
+            isLiked && setLiked(true);
+         })
+         .catch((err) => console.log(err));
+   }, []);
+
    const addLikeClass = () => {
+      if (Cookies.get("access")) {
+         fetch(`https://djangorest.pythonanywhere.com/like/${route}/`, {
+            headers: {
+               "Content-Type": "application/json",
+               Authorization: `Bearer ${Cookies.get("access")}`,
+            },
+            method: "GET",
+         })
+            .then((res) => {
+               console.log(res);
+               res.status === 200 && setLiked(true);
+            })
+            .catch((err) => console.log(err));
+      } else {
+         navigation("/login");
+      }
       setLiked((prev) => !prev);
    };
 

@@ -17,7 +17,10 @@ https://djangorest.pythonanywhere.com/search/???
 https://djangorest.pythonanywhere.com/detail/???
 
 لایک کردن آهنگ
-https://djangorest.pythonanywhere.com/like/Lovely/???
+https://djangorest.pythonanywhere.com/like/id
+
+سیو کردن آهنگ
+https://djangorest.pythonanywhere.com/save/id
 
 swagger
 https://djangorest.pythonanywhere.com/schema/swagger-ui/
@@ -30,3 +33,6 @@ https://djangorest.pythonanywhere.com/accounts/register/
 
 login
 https://djangorest.pythonanywhere.com/accounts/login/
+
+user
+https://djangorest.pythonanywhere.com/accounts/profile/
