@@ -1,0 +1,17 @@
+.search-song .row {
+   position: relative;
+   padding-top: 15rem;
+}
+
+.search-song-title {
+   text-align: center;
+   font-size: 4rem;
+   font-family: "mont2";
+   margin-bottom: 2rem;
+}
+
+.search-song-line {
+   height: 0.1rem;
+   background-color: var(--gray);
+   margin-bottom: 5rem;
+}

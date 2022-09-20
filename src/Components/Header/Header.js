@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import { BiSearchAlt, BiUserCheck } from "react-icons/bi";
 import { CgMenuMotion, CgLogIn } from "react-icons/cg";
@@ -13,6 +13,9 @@ export default function Header() {
    const [selectShow, setSelectShow] = useState(false);
    const [selectItems, setSelectItems] = useState();
    const [allSongs, setAllSongs] = useState();
+   const [searchValue, setSearchValue] = useState("");
+
+   let navigation = useNavigate();
 
    useEffect(() => {
       fetch("https://djangorest.pythonanywhere.com/all-styles/")
@@ -35,6 +38,11 @@ export default function Header() {
       setShowCollapse(false);
    };
 
+   const saerchTheSong = (e) => {
+      e.preventDefault();
+      searchValue && navigation(`/search/${searchValue}`);
+   };
+
    return (
       <>
          <header className="header">
@@ -46,10 +54,10 @@ export default function Header() {
                      </Link>
                      <p className="logo-title">PRO MUSIC</p>
                   </div>
-                  <span className="search">
-                     <BiSearchAlt className="search-icon"></BiSearchAlt>
-                     <input type="text" className="search-input" placeholder="Search..." />
-                  </span>
+                  <form className="search" onSubmit={saerchTheSong}>
+                     <BiSearchAlt className="search-icon" onClick={saerchTheSong}></BiSearchAlt>
+                     <input type="text" className="search-input" placeholder="Search..." value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
+                  </form>
                   <ul className="header-menu">
                      <Link to="/dashboard" className="header-menu__item">
                         My library

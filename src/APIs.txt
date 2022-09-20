@@ -17,10 +17,10 @@ https://djangorest.pythonanywhere.com/search/???
 https://djangorest.pythonanywhere.com/detail/???
 
 لایک کردن آهنگ
-https://djangorest.pythonanywhere.com/like/id
+https://djangorest.pythonanywhere.com/like/id/
 
 سیو کردن آهنگ
-https://djangorest.pythonanywhere.com/save/id
+https://djangorest.pythonanywhere.com/save/id/
 
 حذف تمام لایک ها 
 https://djangorest.pythonanywhere.com/accounts/remove-likes/
