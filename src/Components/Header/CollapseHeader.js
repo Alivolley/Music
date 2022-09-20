@@ -40,7 +40,7 @@ export default function CollapseHeader(props) {
                   <Link to="/" className="collapse-header__item">
                      Home
                   </Link>
-                  <Link to="/" className="collapse-header__item ">
+                  <Link to="/dashboard" className="collapse-header__item ">
                      My library
                   </Link>
                   <div className={`${selectShow ? "collapse-songs collapse-header__item collapse-songs--show" : "collapse-songs collapse-header__item"}`}>

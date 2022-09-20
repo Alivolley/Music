@@ -22,14 +22,11 @@ export default function Footer() {
                   <Link to="/" className="footer-fast-access__item">
                      Home
                   </Link>
-                  <Link to="/" className="footer-fast-access__item">
+                  <Link to="/dashboard" className="footer-fast-access__item">
                      My library
                   </Link>
-                  <Link to="/" className="footer-fast-access__item">
+                  <Link to="/allSongs" className="footer-fast-access__item">
                      Songs
-                  </Link>
-                  <Link to="/" className="footer-fast-access__item">
-                     Download
                   </Link>
                </ul>
                <div className="footer-contact col-md-6">

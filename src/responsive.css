@@ -47,6 +47,18 @@
    .singercard-genre__label {
       padding-right: 0.5rem;
    }
+
+   .favorite-actions {
+      flex-direction: row;
+      gap: 0;
+   }
+
+   .favorite-remove,
+   .favorite-listen,
+   th,
+   td {
+      font-size: 1.7rem;
+   }
 }
 
 /* md */

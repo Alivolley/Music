@@ -6,14 +6,16 @@ import Genres from "./Components/Genres/Genres";
 import Singers from "./Components/Singers/Singers";
 import ChosenSinger from "./Components/ChosenSinger/ChosenSinger";
 import Register from "./Components/Register/Register";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 export let routes = [
    { path: "/", element: <Home /> },
-   { path: "/login", element: <Login></Login> },
-   { path: "/register", element: <Register></Register> },
-   { path: "/allSongs", element: <AllSongs></AllSongs> },
-   { path: "/song/:id", element: <ChosenSong></ChosenSong> },
-   { path: "/genres/:genre", element: <Genres></Genres> },
-   { path: "/singers", element: <Singers></Singers> },
-   { path: "/singers/:singer", element: <ChosenSinger></ChosenSinger> },
+   { path: "/login", element: <Login /> },
+   { path: "/register", element: <Register /> },
+   { path: "/allSongs", element: <AllSongs /> },
+   { path: "/dashboard", element: <Dashboard /> },
+   { path: "/song/:id", element: <ChosenSong /> },
+   { path: "/genres/:genre", element: <Genres /> },
+   { path: "/singers", element: <Singers /> },
+   { path: "/singers/:singer", element: <ChosenSinger /> },
 ];

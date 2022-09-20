@@ -53,7 +53,7 @@ export default function Login() {
                setModalText("You logged in successfully :)");
 
                setTimeout(() => {
-                  navigation("/");
+                  navigation("/dashboard");
                }, 1500);
             })
             .catch((err) => setModalText("!!! Password or Email is wrong ."));

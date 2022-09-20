@@ -35,7 +35,6 @@ export default function MusicCard({ img, title, singer, route }) {
             method: "GET",
          })
             .then((res) => {
-               console.log(res);
                res.status === 200 && setLiked(true);
             })
             .catch((err) => console.log(err));

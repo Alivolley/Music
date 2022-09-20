@@ -45,7 +45,6 @@ export default function ChosenSong() {
             .then((res) => res.json())
             .then((data) => {
                let isfavore = data.saves.some((song) => song.music.id === Number(params.id));
-               console.log(isfavore);
                isfavore && setIsInFavirote(true);
             })
             .catch((err) => console.log(err));
@@ -89,8 +88,6 @@ export default function ChosenSong() {
    const hideNotife = () => {
       setShowNotife(false);
    };
-
-   // console.log(mainSong);
 
    return (
       <div className="chosensong container">

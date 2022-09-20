@@ -51,7 +51,7 @@ export default function Header() {
                      <input type="text" className="search-input" placeholder="Search..." />
                   </span>
                   <ul className="header-menu">
-                     <Link to="/" className="header-menu__item">
+                     <Link to="/dashboard" className="header-menu__item">
                         My library
                      </Link>
                      <div className={`${selectShow ? "header-songs header-songs--show" : "header-songs"}`}>

@@ -44,7 +44,6 @@ export default function Register() {
             body: JSON.stringify(usernameInfo),
          })
             .then((res) => {
-               // console.log(res);
                if (res.statusText === "Created") {
                   setModalText("You regitered successfully :) . Now you must login");
                   setTimeout(() => {
@@ -57,7 +56,6 @@ export default function Register() {
                }
             })
             .catch((err) => {
-               // console.log(err);
                if (err.statusText === "Conflict") {
                   setModalText("!!! A user exist with this information");
                } else {
