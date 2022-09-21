@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Header.css";
 import { BiSearchAlt, BiUserCheck } from "react-icons/bi";
 import { CgMenuMotion, CgLogIn } from "react-icons/cg";
@@ -16,6 +16,7 @@ export default function Header() {
    const [searchValue, setSearchValue] = useState("");
 
    let navigation = useNavigate();
+   let location = useLocation();
 
    useEffect(() => {
       fetch("https://djangorest.pythonanywhere.com/all-styles/")
@@ -32,7 +33,7 @@ export default function Header() {
    useEffect(() => {
       setSelectShow(false);
       setShowCollapse(false);
-   }, [window.location.pathname]);
+   }, [location.pathname]);
 
    const unshowCollapseMenu = () => {
       setShowCollapse(false);
@@ -78,12 +79,12 @@ export default function Header() {
 
                            {selectItems &&
                               selectItems.map((genre) => (
-                                 <a key={genre.id} href={`/genres/${genre.title}`} className="header-option">
+                                 <Link key={genre.id} to={`/genres/${genre.title}`} className="header-option">
                                     {genre.title}{" "}
                                     <Badge pill bg="" className="header-badge">
                                        {genre.music_count}
                                     </Badge>
-                                 </a>
+                                 </Link>
                               ))}
 
                            <div className="header-option__line"></div>

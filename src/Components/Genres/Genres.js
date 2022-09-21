@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import ConectFaild from "../ConectFaild/ConnectFaild";
 import Loading from "../Loading/Loading";
 import MusicCard from "../MusicCard/MusicCard";
@@ -10,6 +10,7 @@ export default function Genres() {
    const [connectFaild, setConectFaild] = useState(false);
 
    let params = useParams();
+   let location = useLocation();
 
    useEffect(() => {
       fetch("https://djangorest.pythonanywhere.com/all-musics/")
@@ -19,6 +20,15 @@ export default function Genres() {
          })
          .catch((err) => setConectFaild(true));
    }, []);
+
+   useEffect(() => {
+      fetch("https://djangorest.pythonanywhere.com/all-musics/")
+         .then((res) => res.json())
+         .then((data) => {
+            setGenreSongs(data.filter((item) => item.style.title === params.genre));
+         })
+         .catch((err) => setConectFaild(true));
+   }, [location.pathname]);
 
    return (
       <div className="container genres">

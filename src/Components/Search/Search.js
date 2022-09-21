@@ -11,6 +11,7 @@ export default function Search() {
    const [notFound, setNotFound] = useState(false);
 
    let params = useParams();
+   let location = useLocation();
 
    useEffect(() => {
       fetch(`https://djangorest.pythonanywhere.com/search/${params.title}/`)
@@ -20,6 +21,16 @@ export default function Search() {
          })
          .catch((err) => setConectFaild(true));
    }, []);
+
+   useEffect(() => {
+      setNotFound(false);
+      fetch(`https://djangorest.pythonanywhere.com/search/${params.title}/`)
+         .then((res) => (res.status === 200 ? res.json() : setNotFound(true)))
+         .then((data) => {
+            setSearchedSongs(data);
+         })
+         .catch((err) => setConectFaild(true));
+   }, [location.pathname]);
 
    return (
       <div className="container search-song">

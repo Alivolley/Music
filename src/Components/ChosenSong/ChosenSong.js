@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ChosenSong.css";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
 import Loading from "../Loading/Loading";
 import ConectFaild from "../ConectFaild/ConnectFaild";
@@ -18,6 +18,7 @@ export default function ChosenSong() {
 
    let params = useParams();
    let navigation = useNavigate();
+   let location = useLocation();
 
    useEffect(() => {
       if (Cookies.get("access")) {
@@ -62,6 +63,36 @@ export default function ChosenSong() {
             })
             .catch((err) => setConectFaild(true));
    }, [mainSong]);
+
+   useEffect(() => {
+      fetch(`https://djangorest.pythonanywhere.com/detail/${params.id}/`, {
+         headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${Cookies.get("access")}`,
+         },
+         method: "GET",
+      })
+         .then((result) => result.json())
+         .then((res) => {
+            setMainSongPic(`linear-gradient(90deg, rgba(13, 13, 13, 0.3) 50%, rgba(13, 13, 13, 0.3) 100%),url(https://djangorest.pythonanywhere.com${res.avatar})`);
+            setMainSong(res);
+         })
+         .catch((err) => setConectFaild(true));
+
+      fetch("https://djangorest.pythonanywhere.com/accounts/profile/", {
+         headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${Cookies.get("access")}`,
+         },
+         method: "GET",
+      })
+         .then((res) => res.json())
+         .then((data) => {
+            let isfavore = data.saves.some((song) => song.music.id === Number(params.id));
+            isfavore && setIsInFavirote(true);
+         })
+         .catch((err) => console.log(err));
+   }, [location.pathname]);
 
    const toggleSongToFavirote = () => {
       fetch(`https://djangorest.pythonanywhere.com/save/${params.id}/`, {
@@ -145,13 +176,13 @@ export default function ChosenSong() {
                         sameGenre.map(
                            (song, index) =>
                               index < 6 && (
-                                 <a key={song.id} href={`/song/${song.id}`} className="chosensong-same__card">
+                                 <Link key={song.id} to={`/song/${song.id}`} className="chosensong-same__card">
                                     <img src={`https://djangorest.pythonanywhere.com${song.avatar}`} alt="" className="chosensong-same__img" />
                                     <div className="chosensong-same__info">
                                        <p className="chosensong-same__song">{song.title}</p>
                                        <p className="chosensong-same__singer">{song.singer.name}</p>
                                     </div>
-                                 </a>
+                                 </Link>
                               )
                         )}
                      <Link className="chosensong-same__view" to={`/genres/${mainSong.style.title}`}>
