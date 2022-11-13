@@ -59,6 +59,14 @@
    td {
       font-size: 1.7rem;
    }
+
+   .contact-modal {
+      font-size: 1.6rem;
+   }
+
+   .contact-modal__item--email {
+      font-size: 1.3rem;
+   }
 }
 
 /* md */

@@ -1,0 +1,63 @@
+/* .app {
+}
+
+.contact-btn {
+   position: fixed;
+   bottom: 1.5rem;
+   right: 1.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 0.1rem solid white;
+   width: 5rem;
+   height: 5rem;
+   border-radius: 50%;
+   font-size: 2.5rem;
+   background-color: var(--primary);
+}
+
+.contact-btn__icon {
+}
+
+.contact-btn__text {
+}
+
+.contact-modal {
+   position: fixed;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   display: flex;
+   background-color: var(--primary);
+   font-size: 1.2rem;
+   padding: 0 1.5rem;
+}
+
+.contact-modal__front {
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+}
+
+.contact-modal__item {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+.contact-modal__icon {
+}
+
+.contact-modal__back {
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+}
+
+.contact-modal__title {
+   margin-top: 1rem;
+}
+
+.contact-modal__item--email {
+   font-size: 0.8rem;
+} */

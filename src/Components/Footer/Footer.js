@@ -4,6 +4,10 @@ import { FaTwitter } from "react-icons/fa";
 import { TbArrowTopTail } from "react-icons/tb";
 import { BsTelegram, BsWhatsapp } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { IoMdContacts } from "react-icons/io";
+import { SiTelegram } from "react-icons/si";
+import { CgMail } from "react-icons/cg";
+import { FcPhoneAndroid } from "react-icons/fc";
 import "./Footer.css";
 
 export default function Footer() {
@@ -47,6 +51,43 @@ export default function Footer() {
                   </ul>
                </div>
             </div>
+
+            <div className="contact-modal">
+               <div className="contact-modal__front">
+                  <p className="contact-modal__title">Frontend Developer</p>
+                  <p className="contact-modal__item">Ali Azghandi</p>
+                  <p className="contact-modal__item">
+                     <SiTelegram className="contact-modal__icon" />
+                     @Alivolley
+                  </p>
+                  <p className="contact-modal__item">
+                     <FcPhoneAndroid className="contact-modal__icon" />
+                     09383935719
+                  </p>
+                  <p className="contact-modal__item contact-modal__item--email">
+                     <CgMail className="contact-modal__icon" />
+                     alicryptovolley@gmail.com
+                  </p>
+               </div>
+
+               <div className="contact-modal__back">
+                  <p className="contact-modal__title">Backend Developer</p>
+                  <p className="contact-modal__item">Javad Najari</p>
+                  <p className="contact-modal__item">
+                     <SiTelegram className="contact-modal__icon" />
+                     @J_N_1998
+                  </p>
+                  <p className="contact-modal__item">
+                     <FcPhoneAndroid className="contact-modal__icon" />
+                     09928721882
+                  </p>
+                  <p className="contact-modal__item contact-modal__item--email">
+                     <CgMail className="contact-modal__icon" />
+                     javad.programmer100@gmail.com
+                  </p>
+               </div>
+            </div>
+
             <div className="footer-copy-right">© 2020. All rights reserved.</div>
          </div>
       </div>
