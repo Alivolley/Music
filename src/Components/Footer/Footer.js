@@ -79,7 +79,7 @@ export default function Footer() {
                   </p>
                   <p className="contact-modal__item">
                      <FcPhoneAndroid className="contact-modal__icon" />
-                     09928721882
+                     0990 822 7202
                   </p>
                   <p className="contact-modal__item contact-modal__item--email">
                      <CgMail className="contact-modal__icon" />
