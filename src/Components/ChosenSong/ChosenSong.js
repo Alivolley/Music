@@ -50,7 +50,10 @@ export default function ChosenSong() {
             })
             .catch((err) => console.log(err));
       } else {
-         navigation("/login");
+         navigation("/login", {
+            replace: true,
+            state: { from: location },
+         });
       }
    }, []);
 

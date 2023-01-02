@@ -4,7 +4,7 @@ import { BiUserPin } from "react-icons/bi";
 import { GiConfirmed } from "react-icons/gi";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import ModalComp from "../ModalComp/ModalComp";
 import Loading from "../Loading/Loading";

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./MusicCard.css";
 import { BiPlayCircle } from "react-icons/bi";
 import Cookies from "js-cookie";
@@ -8,6 +8,7 @@ export default function MusicCard({ img, title, singer, route }) {
    const [liked, setLiked] = useState(false);
 
    let navigation = useNavigate();
+   let location = useLocation();
 
    useEffect(() => {
       fetch("https://djangorest.pythonanywhere.com/accounts/profile/", {
@@ -39,7 +40,10 @@ export default function MusicCard({ img, title, singer, route }) {
             })
             .catch((err) => console.log(err));
       } else {
-         navigation("/login");
+         navigation("/login", {
+            replace: true,
+            state: { from: location },
+         });
       }
       setLiked((prev) => !prev);
    };

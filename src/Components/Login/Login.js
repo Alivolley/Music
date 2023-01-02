@@ -4,8 +4,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineUser } from "react-icons/
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { TbAlertOctagon } from "react-icons/tb";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import Cookie from "js-cookie";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import ModalComp from "../ModalComp/ModalComp";
 import Loading from "../Loading/Loading";
@@ -53,7 +52,7 @@ export default function Login() {
                setModalText("You logged in successfully :)");
 
                setTimeout(() => {
-                  navigation("/dashboard");
+                  navigation(-1);
                }, 1500);
             })
             .catch((err) => setModalText("!!! Password or Email is wrong ."));

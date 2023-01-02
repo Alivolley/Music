@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import Table from "react-bootstrap/Table";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import Loading from "../Loading/Loading";
 import ConectFaild from "../ConectFaild/ConnectFaild";
@@ -13,6 +13,7 @@ export default function Dashboard() {
    const [reload, setReload] = useState(false);
 
    let navigation = useNavigate();
+   let location = useLocation();
 
    useEffect(() => {
       if (Cookies.get("access")) {
@@ -29,7 +30,10 @@ export default function Dashboard() {
             .then((data) => setProfile(data))
             .catch((err) => setConectFaild(true));
       } else {
-         navigation("/login");
+         navigation("/login", {
+            replace: true,
+            state: { from: location },
+         });
       }
    }, []);
 
