@@ -13,8 +13,6 @@ function App() {
       window.scrollTo(0, 0);
    }, [location.pathname]);
 
-   console.log(location);
-
    return (
       <>
          <Header />

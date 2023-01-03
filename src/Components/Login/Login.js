@@ -4,7 +4,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineUser } from "react-icons/
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { TbAlertOctagon } from "react-icons/tb";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import ModalComp from "../ModalComp/ModalComp";
 import Loading from "../Loading/Loading";
@@ -17,7 +17,9 @@ export default function Login() {
    const [showModal, setShowModal] = useState(false);
    const [modalText, setModalText] = useState();
 
+   let location = useLocation();
    let navigation = useNavigate();
+   const from = location.state?.from?.pathname || "/";
 
    const changevisibilty = () => {
       setShowPass((prev) => !prev);
@@ -52,8 +54,8 @@ export default function Login() {
                setModalText("You logged in successfully :)");
 
                setTimeout(() => {
-                  navigation(-1);
-               }, 1500);
+                  navigation(from, { replace: true });
+               }, 500);
             })
             .catch((err) => setModalText("!!! Password or Email is wrong ."));
       }
