@@ -82,19 +82,13 @@ export default function Register() {
                   className="register-username__input"
                   placeholder="Username"
                   maxLength="10"
-                  value={usernameValue.toLowerCase()}
+                  value={usernameValue}
                   onChange={(e) => setUsernameValue(e.target.value)}
                />
             </div>
             <div className="register-email__wrapper">
                <MdOutlineEmail className="register-email__icon" />
-               <input
-                  type="text"
-                  className="register-email__input"
-                  placeholder="Email"
-                  value={emailValue.toLowerCase()}
-                  onChange={(e) => setEmailValue(e.target.value)}
-               />
+               <input type="text" className="register-email__input" placeholder="Email" value={emailValue} onChange={(e) => setEmailValue(e.target.value)} />
             </div>
             <div className="register-password__wrapper">
                <RiLockPasswordLine className="register-password__icon" />

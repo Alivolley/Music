@@ -76,7 +76,7 @@ export default function Login() {
          <form action="" className="login-form" onSubmit={checkForm}>
             <div className="login-email__wrapper">
                <MdOutlineEmail className="login-email__icon" />
-               <input type="text" className="login-email__input" placeholder="Email" value={emailValue.toLowerCase()} onChange={(e) => setEmailValue(e.target.value)} />
+               <input type="text" className="login-email__input" placeholder="Email" value={emailValue} onChange={(e) => setEmailValue(e.target.value)} />
             </div>
             <div className="login-password__wrapper">
                <RiLockPasswordLine className="login-password__icon" />
@@ -85,7 +85,7 @@ export default function Login() {
                   className="login-password__input"
                   placeholder="Password"
                   maxLength="8"
-                  value={passwordValue.toLowerCase()}
+                  value={passwordValue}
                   onChange={(e) => setPasswordValue(e.target.value)}
                />
                {showPass ? (
